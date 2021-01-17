@@ -31,13 +31,17 @@ jobs:
       - run:
           name: Run tests
           command: |
+            curl -H "Circle-Token: $CIRCLE_TOKEN" https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts
+            unzip allure-report.zip -d allure-previous
             npm run test:chrome:headless
+            cp -r allure-previous/history allure-results
             npm run report:generate
             zip -r allure-report.zip allure-report
       - run:
           when: on_fail
           name: Generate fail results
           command: |
+            cp -r allure-previous/history allure-results
             npm run report:generate
             zip -r allure-results.zip allure-results
       - store_artifacts:
