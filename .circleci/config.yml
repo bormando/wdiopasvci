@@ -16,7 +16,7 @@ jobs:
     # You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # A list of available CircleCI docker Convenience Images are available here: https://circleci.com/developer/images/image/cimg/node
     docker:
-      - image: cimg/node:15.1-browsers
+      - image: cimg/node:15.6-browsers
     # Then run your tests!
     # CircleCI will report the results back to your VCS provider.
     steps:
@@ -31,7 +31,9 @@ jobs:
       - run:
           name: Run tests
           command: |
-            echo $CHROME_VERSION
+            npm run test:chrome:headless
+            npm run report:generate
+            zip -r allure-report.zip allure-report
       - store_artifacts:
           path: allure-report.zip
 
