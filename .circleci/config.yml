@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            npm run test:chrome
+            npm run test:chrome:headless
             npm run report:generate
             zip -r allure-report.zip allure-report
       - store_artifacts:
