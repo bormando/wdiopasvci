@@ -34,7 +34,7 @@ jobs:
             wget $(curl https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts?filter=successful -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*') -O allure-previous.zip
             test -f allure-previous.zip && unzip allure-previous.zip -d allure-previous
             npm run test:chrome:headless
-            cp -r allure-previous/history allure-results
+            cp -r allure-previous/allure-report/history allure-results
             npm run report:generate
             zip -r allure-report.zip allure-report
       - run:
@@ -43,7 +43,7 @@ jobs:
           command: |
             wget $(curl https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts?filter=successful -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*') -O allure-previous.zip
             test -f allure-previous.zip && unzip allure-previous.zip -d allure-previous
-            cp -r allure-previous/history allure-results
+            cp -r allure-previous/allure-report/history allure-results
             npm run report:generate
             zip -r allure-results.zip allure-results
       - store_artifacts:
