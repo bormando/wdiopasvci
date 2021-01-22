@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8468428c-9bab-4bd4-b8b1-fb43d1e05b5c" name="Default Changelist" comment="refactor clearInput method to be available on all OS&#10;remove msedgedriver from dependencies and configuration">
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +49,7 @@
       <recent name="C:\Users\Dmitriy\WebstormProjects\webdrivertest" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.test:chrome:headless">
+  <component name="RunManager" selected="npm.report:generate">
     <configuration name="report:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -111,11 +112,11 @@
     </configuration>
     <list>
       <item itemvalue="npm.report:open" />
+      <item itemvalue="npm.test:chrome:headless" />
       <item itemvalue="npm.report:generate" />
       <item itemvalue="npm.test:firefox" />
       <item itemvalue="npm.test:firefox:headless" />
       <item itemvalue="npm.test:chrome" />
-      <item itemvalue="npm.test:chrome:headless" />
     </list>
     <recent_temporary>
       <list>
@@ -142,6 +143,10 @@
       <workItem from="1610676225842" duration="623000" />
       <workItem from="1610716123244" duration="3855000" />
       <workItem from="1610767471689" duration="1266000" />
+      <workItem from="1610912004653" duration="8875000" />
+      <workItem from="1611040190335" duration="330000" />
+      <workItem from="1611045071478" duration="571000" />
+      <workItem from="1611343497002" duration="260000" />
     </task>
     <task id="LOCAL-00001" summary="refactor clearInput method to be available on all OS&#10;remove msedgedriver from dependencies and configuration">
       <created>1610394593595</created>
@@ -150,7 +155,91 @@
       <option name="project" value="LOCAL" />
       <updated>1610394593595</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add echo chrome version">
+      <created>1610913776911</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1610913776911</updated>
+    </task>
+    <task id="LOCAL-00003" summary="echo chrome version only">
+      <created>1610914018835</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1610914018835</updated>
+    </task>
+    <task id="LOCAL-00004" summary="change container version">
+      <created>1610914198073</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1610914198073</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change container version">
+      <created>1610914417506</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610914417506</updated>
+    </task>
+    <task id="LOCAL-00006" summary="change browser to run">
+      <created>1610914578091</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610914578091</updated>
+    </task>
+    <task id="LOCAL-00007" summary="change image">
+      <created>1610915000058</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1610915000058</updated>
+    </task>
+    <task id="LOCAL-00008" summary="make browser headless in ci">
+      <created>1610915060017</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610915060017</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fail step for report generation">
+      <created>1610915205309</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610915205309</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add allure report history">
+      <created>1610916101705</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1610916101705</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update allure history">
+      <created>1610919882504</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610919882504</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update allure history">
+      <created>1610920007804</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610920007804</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test commit">
+      <created>1610920153832</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610920153832</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +259,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactor clearInput method to be available on all OS&#10;remove msedgedriver from dependencies and configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor clearInput method to be available on all OS&#10;remove msedgedriver from dependencies and configuration" />
+    <MESSAGE value="add echo chrome version" />
+    <MESSAGE value="echo chrome version only" />
+    <MESSAGE value="change container version" />
+    <MESSAGE value="change browser to run" />
+    <MESSAGE value="change image" />
+    <MESSAGE value="make browser headless in ci" />
+    <MESSAGE value="fail step for report generation" />
+    <MESSAGE value="add allure report history" />
+    <MESSAGE value="update allure history" />
+    <MESSAGE value="test commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="test commit" />
   </component>
 </project>
