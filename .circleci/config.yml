@@ -15,7 +15,7 @@ jobs:
           name: Get previous results
           command: |
             export ARTIFACT_LINK="https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts"
-            curl $ARTIFACT_LINK -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*' && wget $(curl $ARTIFACT_LINK -q -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*') -O allure-previous.zip
+            curl $ARTIFACT_LINK -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*' && wget $(curl $ARTIFACT_LINK -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*') -O allure-previous.zip
             test -f allure-previous.zip && unzip allure-previous.zip -d allure-previous
       - run:
           name: Run tests
