@@ -14,7 +14,8 @@ jobs:
       - run:
           name: Get previous results
           command: |
-            test -f allure-previous.zip && unzip allure-previous.zip -d allure-previous
+            curl https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts -H "Circle-Token $CIRCLE_TOKEN" | grep -Eoq '(http|https)://[a-zA-Z0-9./?=_%:-]*' && wget $(curl https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*') -O allure-previous.zip
+            test -f allure-previous.zip && unzip allure-previous.zip -d allure-previous || echo "Archive not found"
       - run:
           name: Run tests
           command: |
