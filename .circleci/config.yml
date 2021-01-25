@@ -12,21 +12,23 @@ jobs:
       - checkout
       - node/install-packages
       - run:
+          name: Get previous results
+          command: |
+            EXPORT ARTIFACT_LINK="https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts"
+            curl $ARTIFACT_LINK -H "Circle-Token $CIRCLE_TOKEN" | grep -Eoq '(http|https)://[a-zA-Z0-9./?=_%:-]*' && wget $(curl $ARTIFACT_LINK -q -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*') -q -O allure-previous.zip
+            test -f allure-previous.zip && unzip allure-previous.zip -d allure-previous
+      - run:
           name: Run tests
           command: |
-            wget $(curl https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts?filter=successful -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*') -O allure-previous.zip
-            test -f allure-previous.zip && unzip allure-previous.zip -d allure-previous
             npm run test:chrome:headless
-            cp -r allure-previous/allure-report/history allure-results
+            test -d allure-previous && cp -r allure-previous/allure-report/history allure-results
             npm run report:generate
             zip -r allure-report.zip allure-report
       - run:
           when: on_fail
           name: Generate fail results
           command: |
-            wget $(curl https://circleci.com/api/v1.1/project/github/bormando/wdiopasvci/latest/artifacts?filter=successful -H "Circle-Token $CIRCLE_TOKEN" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*') -O allure-previous.zip
-            test -f allure-previous.zip && unzip allure-previous.zip -d allure-previous
-            cp -r allure-previous/allure-report/history allure-results
+            test -d allure-previous && cp -r allure-previous/allure-report/history allure-results
             npm run report:generate
             zip -r allure-results.zip allure-results
       - store_artifacts:
